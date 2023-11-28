@@ -18,7 +18,7 @@ Follow the instructions in the Dockerfile to build the Docker image and run a co
 
 The Dockerfile starts with the official Node.js 19 Alpine image, which provides a lightweight Linux environment with Node.js and npm installed.
 
-```docker
+```dockerfile
 # Base image
 FROM node:19-alpine
 ```
@@ -27,7 +27,7 @@ FROM node:19-alpine
 
 The next steps involve copying the necessary files from your local machine to the container. This includes the `package.json` file and the `src`` directory.
 
-```docker
+```dockerfile
 # Copy package.json to /app/ in the container
 COPY package.json /app/
 
