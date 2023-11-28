@@ -13,6 +13,16 @@ The Dockerfile includes instructions for copying application files, setting the 
 
 Follow the instructions in the Dockerfile to build the Docker image and run a container. Ensure that Docker is installed on your machine before proceeding. Feel free to customize the Dockerfile and project structure based on your specific application requirements.
 
+## Dockerfile Overview
+### Base Image
+
+The Dockerfile starts with the official Node.js 19 Alpine image, which provides a lightweight Linux environment with Node.js and npm installed.
+
+```docker
+# Base image
+FROM node:19-alpine
+
+```
 ## License
 
 This project is licensed under the [MIT License](LICENSE).
