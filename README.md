@@ -27,7 +27,7 @@ FROM node:19-alpine
 
 The next steps involve copying the necessary files from your local machine to the container. This includes the `package.json` file and the `src`` directory.
 
-```dockerfile
+```Dockerfile
 # Copy package.json to /app/ in the container
 COPY package.json /app/
 
@@ -38,14 +38,14 @@ COPY src /app/
 
 Set the working directory to /app/ in the container to execute commands and run the application.
 
-```dockerfile
+```Dockerfile
 # Change into the /app/ directory
 WORKDIR /app
 ```
 
 ### Installing Dependencies
 
-Run `npm install`` to install the dependencies specified in the `package.json`` file.
+Run `npm install` to install the dependencies specified in the `package.json`` file.
 
 ```Dockerfile
 # Install dependencies
