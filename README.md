@@ -21,8 +21,61 @@ The Dockerfile starts with the official Node.js 19 Alpine image, which provides 
 ```docker
 # Base image
 FROM node:19-alpine
-
 ```
+
+### Copying Application Files
+
+The next steps involve copying the necessary files from your local machine to the container. This includes the `package.json` file and the `src`` directory.
+
+```docker
+# Copy package.json to /app/ in the container
+COPY package.json /app/
+
+# Copy the entire src directory to /app/ in the container
+COPY src /app/
+```
+### Working Directory
+
+Set the working directory to /app/ in the container to execute commands and run the application.
+
+```dockerfile
+# Change into the /app/ directory
+WORKDIR /app
+```
+
+### Installing Dependencies
+
+Run `npm install`` to install the dependencies specified in the `package.json`` file.
+
+```Dockerfile
+# Install dependencies
+RUN npm install
+```
+
+### Starting the Application
+
+The final command in the Dockerfile specifies the default command to be executed when the container starts. In this case, it starts the Node.js application using node server.js.
+
+```Dockerfile
+# Start the Node.js application
+CMD ["node", "server.js"]
+``````
+
+### Building and Running the Docker Image
+
+To build the Docker image, use the following command:
+
+```bash
+docker build -t node-app:1.0
+```
+
+To run a container from the built image:
+
+```bash
+docker run -p 3000:3000 node-app:1.0
+```
+
+
 ## License
 
 This project is licensed under the [MIT License](LICENSE).
