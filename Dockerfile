@@ -9,12 +9,13 @@ FROM node:19-alpine
 #we take file from local computer
 #we need package.json in order to install dependancies
 # packadge.json - location on machine
-# /app/ - location in the container
-COPY package.json /app/
-COPY src /app/
+# usr/app/ - location in the container
+# * so we cna copy package-lock as well
+COPY package*.json /usr/app/
+COPY src usr/app/
 
 #change into directory so we can execute packadge.json
-WORKDIR /app
+WORKDIR /usr/app
 
 #run the command befpre aapplication is started
 #install dependancies here. it will read from packadge.json
