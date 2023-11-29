@@ -21,5 +21,8 @@ WORKDIR /usr/app
 #install dependancies here. it will read from packadge.json
 RUN npm install
 
+#optional
+#EXPOSE 4000 
+
 #start the process/application
 CMD ["node", "server.js"]
