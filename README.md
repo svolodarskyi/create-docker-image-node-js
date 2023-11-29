@@ -72,7 +72,7 @@ docker build -t node-app:1.0
 To run a container from the built image:
 
 ```bash
-docker run -p 3000:3000 node-app:1.0
+docker run -p 3000:3000 node-app:1.0 .
 ```
 
 
